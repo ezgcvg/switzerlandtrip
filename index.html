@@ -1,0 +1,1088 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>İsviçre Rehberi | Rotalar, Şehirler ve Alpler</title>
+  <meta name="description" content="İsviçre'de gezilecek yerler, tren rotaları, şehir planları ve Alpler odaklı detaylı gezi rehberi.">
+  <style>
+    :root {
+      --ink: #17211c;
+      --muted: #5b675f;
+      --paper: #f7f4ee;
+      --white: #fffdf8;
+      --red: #cf2f37;
+      --red-dark: #9f2029;
+      --lake: #2f7f8f;
+      --pine: #275246;
+      --line: rgba(23, 33, 28, 0.14);
+      --shadow: 0 18px 50px rgba(39, 82, 70, 0.16);
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.55;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .site-shell {
+      min-height: 100vh;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(23, 33, 28, 0.78);
+      backdrop-filter: blur(16px);
+      color: white;
+    }
+
+    .nav {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 30px;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      background: var(--red);
+      border-radius: 4px;
+      box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.22);
+      position: relative;
+    }
+
+    .brand-mark::before,
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      background: white;
+      border-radius: 1px;
+    }
+
+    .brand-mark::before {
+      width: 16px;
+      height: 5px;
+    }
+
+    .brand-mark::after {
+      width: 5px;
+      height: 16px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      min-height: 38px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 12px;
+      border-radius: 999px;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: white;
+    }
+
+    .hero {
+      min-height: calc(100vh - 64px);
+      display: flex;
+      align-items: end;
+      position: relative;
+      isolation: isolate;
+      color: white;
+      background:
+        linear-gradient(180deg, rgba(23, 33, 28, 0.18) 0%, rgba(23, 33, 28, 0.48) 48%, rgba(23, 33, 28, 0.84) 100%),
+        url("https://images.unsplash.com/photo-1527668752968-14dc70a27c95?auto=format&fit=crop&w=2200&q=82") center/cover;
+    }
+
+    .hero-inner {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 88px 0 46px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.58fr);
+      gap: 34px;
+      align-items: end;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: rgba(255, 255, 255, 0.84);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(44px, 7vw, 92px);
+      line-height: 0.95;
+      letter-spacing: 0;
+      max-width: 880px;
+    }
+
+    .hero-copy {
+      margin: 22px 0 0;
+      color: rgba(255, 255, 255, 0.88);
+      max-width: 680px;
+      font-size: clamp(17px, 2vw, 22px);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .button {
+      min-height: 46px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: 0;
+      border-radius: 999px;
+      padding: 0 18px;
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+      background: white;
+      color: var(--ink);
+    }
+
+    .button.primary {
+      background: var(--red);
+      color: white;
+    }
+
+    .button.ghost {
+      background: rgba(255, 255, 255, 0.12);
+      color: white;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.32);
+    }
+
+    .hero-panel {
+      background: rgba(255, 253, 248, 0.94);
+      color: var(--ink);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .weather-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .metric {
+      padding: 16px;
+      min-width: 0;
+    }
+
+    .metric + .metric {
+      border-left: 1px solid var(--line);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 24px;
+      line-height: 1.05;
+    }
+
+    .metric span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 5px;
+    }
+
+    .quick-plan {
+      padding: 18px;
+    }
+
+    .quick-plan h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+    }
+
+    .quick-plan ol {
+      margin: 0;
+      padding-left: 22px;
+      color: var(--muted);
+    }
+
+    section {
+      padding: 78px 0;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.7fr);
+      gap: 28px;
+      align-items: end;
+      margin-bottom: 28px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(31px, 4vw, 52px);
+      line-height: 1.02;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .filters {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .filter-btn {
+      min-height: 40px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--white);
+      color: var(--ink);
+      padding: 0 14px;
+      font: inherit;
+      font-weight: 750;
+      cursor: pointer;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--pine);
+      color: white;
+      border-color: var(--pine);
+    }
+
+    .route-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .route-card,
+    .place-card,
+    .info-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 10px 28px rgba(23, 33, 28, 0.06);
+    }
+
+    .route-card[hidden] {
+      display: none;
+    }
+
+    .route-image,
+    .place-image {
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .card-body {
+      padding: 18px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 25px;
+      padding: 0 9px;
+      border-radius: 999px;
+      background: rgba(47, 127, 143, 0.1);
+      color: #245d69;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .route-card h3,
+    .place-card h3,
+    .info-card h3 {
+      margin: 0 0 8px;
+      font-size: 22px;
+      line-height: 1.15;
+    }
+
+    .route-card p,
+    .place-card p,
+    .info-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .day-list {
+      margin: 16px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .day-list li {
+      border-top: 1px solid var(--line);
+      padding-top: 10px;
+      color: var(--muted);
+    }
+
+    .day-list strong {
+      color: var(--ink);
+    }
+
+    .band {
+      background: #eef4f0;
+      border-block: 1px solid var(--line);
+    }
+
+    .places-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .place-card .card-body {
+      min-height: 236px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .place-meta {
+      margin-top: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.7fr);
+      gap: 28px;
+      align-items: start;
+    }
+
+    .map-board {
+      background:
+        linear-gradient(rgba(255, 253, 248, 0.9), rgba(255, 253, 248, 0.9)),
+        url("https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=1400&q=78") center/cover;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      min-height: 540px;
+      position: sticky;
+      top: 88px;
+    }
+
+    .map-line {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .stop {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .pin {
+      width: 34px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--red);
+      color: white;
+      font-weight: 900;
+    }
+
+    .stop strong {
+      display: block;
+    }
+
+    .stop span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 94px 1fr;
+      gap: 16px;
+      padding: 18px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .timeline-item time {
+      font-weight: 900;
+      color: var(--red-dark);
+    }
+
+    .timeline-item h3 {
+      margin: 0 0 6px;
+      font-size: 20px;
+    }
+
+    .timeline-item p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .info-card {
+      padding: 20px;
+    }
+
+    .cost-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .cost-table th,
+    .cost-table td {
+      text-align: left;
+      padding: 10px 0;
+      border-top: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    .cost-table th {
+      color: var(--ink);
+      width: 42%;
+    }
+
+    .cta {
+      padding: 58px 0;
+      background: var(--ink);
+      color: white;
+    }
+
+    .cta .container {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .cta h2 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 46px);
+      line-height: 1.05;
+    }
+
+    .cta p {
+      margin: 12px 0 0;
+      color: rgba(255, 255, 255, 0.74);
+      max-width: 720px;
+    }
+
+    footer {
+      padding: 28px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .source-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .source-links a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    @media (max-width: 980px) {
+      .hero-inner,
+      .section-head,
+      .split,
+      .cta .container {
+        grid-template-columns: 1fr;
+      }
+
+      .route-grid,
+      .info-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .places-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .map-board {
+        position: static;
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 12px 0;
+        gap: 10px;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+        width: 100%;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 3px;
+      }
+
+      .nav-links a {
+        flex: 0 0 auto;
+      }
+
+      .hero {
+        min-height: 780px;
+      }
+
+      .hero-inner {
+        padding-top: 56px;
+      }
+
+      .weather-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .metric + .metric {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+      }
+
+      section {
+        padding: 56px 0;
+      }
+
+      .route-grid,
+      .places-grid,
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <nav class="nav" aria-label="Ana menü">
+        <a class="brand" href="#top" aria-label="İsviçre Rehberi ana sayfa">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>İsviçre Rehberi</span>
+        </a>
+        <div class="nav-links">
+          <a href="#rotalar">Rotalar</a>
+          <a href="#yerler">Gezilecek yerler</a>
+          <a href="#tren">Tren planı</a>
+          <a href="#pratik">Pratik bilgiler</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-label="İsviçre tanıtımı">
+        <div class="hero-inner">
+          <div>
+            <p class="eyebrow">Alpler, göller, trenler ve şehir kültürü</p>
+            <h1>İsviçre'yi rota rota keşfet.</h1>
+            <p class="hero-copy">Zürih'in düzenli sokaklarından Zermatt'ın Matterhorn manzarasına, Luzern göl kıyısından Interlaken maceralarına uzanan detaylı bir gezi rehberi.</p>
+            <div class="hero-actions">
+              <a class="button primary" href="#rotalar">Rota seç</a>
+              <a class="button ghost" href="#yerler">Yerleri incele</a>
+            </div>
+          </div>
+
+          <aside class="hero-panel" aria-label="Hızlı İsviçre planı">
+            <div class="weather-strip">
+              <div class="metric">
+                <strong>7-10</strong>
+                <span>ideal ilk gezi günü</span>
+              </div>
+              <div class="metric">
+                <strong>4</strong>
+                <span>resmi dil bölgesi</span>
+              </div>
+              <div class="metric">
+                <strong>1</strong>
+                <span>ülke, çok farklı tempo</span>
+              </div>
+            </div>
+            <div class="quick-plan">
+              <h2>İlk kez gidenler için kısa reçete</h2>
+              <ol>
+                <li>Zürih veya Cenevre'den giriş yap.</li>
+                <li>Luzern ve Interlaken ile göl-Alp dengesini kur.</li>
+                <li>Bir panoramik tren seç: Glacier Express, Bernina Express veya GoldenPass.</li>
+                <li>Zermatt, Jungfrau bölgesi ya da Montreux ile final yap.</li>
+              </ol>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="rotalar">
+        <div class="container">
+          <div class="section-head">
+            <h2>Hazır gezi rotaları</h2>
+            <p>Rotalar, ulaşımı kolay olacak şekilde tren merkezli planlandı. Süreye ve seyahat tarzına göre filtreleyip kendi programına uyarlayabilirsin.</p>
+          </div>
+
+          <div class="filters" role="group" aria-label="Rota filtreleri">
+            <button class="filter-btn active" type="button" data-filter="all">Tümü</button>
+            <button class="filter-btn" type="button" data-filter="classic">Klasik</button>
+            <button class="filter-btn" type="button" data-filter="nature">Doğa</button>
+            <button class="filter-btn" type="button" data-filter="train">Tren</button>
+            <button class="filter-btn" type="button" data-filter="city">Şehir</button>
+          </div>
+
+          <div class="route-grid">
+            <article class="route-card" data-kind="classic city">
+              <img class="route-image" src="https://images.unsplash.com/photo-1535139262971-c51845709a48?auto=format&fit=crop&w=900&q=78" alt="Luzern Chapel Bridge ve göl manzarası">
+              <div class="card-body">
+                <div class="tag-row">
+                  <span class="tag">5 gün</span>
+                  <span class="tag">ilk gezi</span>
+                  <span class="tag">şehir + göl</span>
+                </div>
+                <h3>Klasik İsviçre başlangıcı</h3>
+                <p>Zürih, Luzern, Bern ve Interlaken'i birleştiren dengeli rota. Az bavul değişimi, bol tren manzarası.</p>
+                <ul class="day-list">
+                  <li><strong>1. gün:</strong> Zürih eski şehir, Bahnhofstrasse, Lindenhof, göl kıyısı.</li>
+                  <li><strong>2. gün:</strong> Luzern, Kapellbrücke, Musegg surları, tekneyle Weggis.</li>
+                  <li><strong>3. gün:</strong> Rigi veya Pilatus; hava kapalıysa İsviçre Ulaşım Müzesi.</li>
+                  <li><strong>4. gün:</strong> Bern eski şehir, ayı parkı, Aare kıyısı.</li>
+                  <li><strong>5. gün:</strong> Interlaken, Lauterbrunnen vadisi ve Grindelwald.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="route-card" data-kind="nature train">
+              <img class="route-image" src="https://images.unsplash.com/photo-1500043357865-c6b8827edf10?auto=format&fit=crop&w=900&q=78" alt="Zermatt yakınlarında Matterhorn manzarası">
+              <div class="card-body">
+                <div class="tag-row">
+                  <span class="tag">7 gün</span>
+                  <span class="tag">Alpler</span>
+                  <span class="tag">panoramik tren</span>
+                </div>
+                <h3>Alpler ve Matterhorn hattı</h3>
+                <p>Interlaken'den Zermatt'a uzanan yüksek dağ rotası. Manzara, yürüyüş ve fotoğraf isteyenlere göre.</p>
+                <ul class="day-list">
+                  <li><strong>1-2. gün:</strong> Interlaken, Harder Kulm, Lauterbrunnen ve Mürren.</li>
+                  <li><strong>3. gün:</strong> Jungfraujoch veya Schynige Platte alternatifi.</li>
+                  <li><strong>4. gün:</strong> Spiez, Thun Gölü ve Blausee molası.</li>
+                  <li><strong>5-6. gün:</strong> Zermatt, Gornergrat, 5-Seenweg yürüyüşü.</li>
+                  <li><strong>7. gün:</strong> Brig veya Montreux üzerinden dönüş.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="route-card" data-kind="train nature">
+              <img class="route-image" src="https://images.unsplash.com/photo-1518084823714-2f59a7315a39?auto=format&fit=crop&w=900&q=78" alt="İsviçre dağlarında tren ve vadi manzarası">
+              <div class="card-body">
+                <div class="tag-row">
+                  <span class="tag">8 gün</span>
+                  <span class="tag">tren tutkunu</span>
+                  <span class="tag">az yürüyüş</span>
+                </div>
+                <h3>Panoramik tren çemberi</h3>
+                <p>GoldenPass, Glacier Express ve Bernina hattının tadını çıkaran, ulaşımın gezinin kendisi olduğu rota.</p>
+                <ul class="day-list">
+                  <li><strong>1. gün:</strong> Cenevre veya Lozan; göl kıyısı ve Lavaux bağları.</li>
+                  <li><strong>2. gün:</strong> Montreux, Chillon Şatosu, GoldenPass ile Zweisimmen.</li>
+                  <li><strong>3-4. gün:</strong> Interlaken ve Jungfrau bölgesi.</li>
+                  <li><strong>5. gün:</strong> Glacier Express hattıyla Andermatt veya St. Moritz.</li>
+                  <li><strong>6-7. gün:</strong> Bernina Express ile Tirano; sonra Chur.</li>
+                  <li><strong>8. gün:</strong> Zürih finali.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="route-card" data-kind="city classic">
+              <img class="route-image" src="https://images.unsplash.com/photo-1515488764276-beab7607c1e6?auto=format&fit=crop&w=900&q=78" alt="Cenevre göl kıyısı ve şehir manzarası">
+              <div class="card-body">
+                <div class="tag-row">
+                  <span class="tag">4 gün</span>
+                  <span class="tag">kısa kaçamak</span>
+                  <span class="tag">kültür</span>
+                </div>
+                <h3>Göl şehirleri molası</h3>
+                <p>Cenevre, Lozan, Montreux ve Lavaux bağları. Daha yumuşak tempo, müze, yürüyüş ve gastronomi odaklı.</p>
+                <ul class="day-list">
+                  <li><strong>1. gün:</strong> Cenevre, Jet d'Eau, eski şehir, Patek Philippe Müzesi.</li>
+                  <li><strong>2. gün:</strong> Lozan, Olimpiyat Müzesi, Ouchy kıyısı.</li>
+                  <li><strong>3. gün:</strong> Lavaux teras bağları ve Vevey.</li>
+                  <li><strong>4. gün:</strong> Montreux, Chillon Şatosu, Rochers-de-Naye.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="route-card" data-kind="nature">
+              <img class="route-image" src="https://images.unsplash.com/photo-1530841344029-ec3ae0fa4cc4?auto=format&fit=crop&w=900&q=78" alt="Lauterbrunnen vadisinde şelale ve dağ evleri">
+              <div class="card-body">
+                <div class="tag-row">
+                  <span class="tag">6 gün</span>
+                  <span class="tag">yürüyüş</span>
+                  <span class="tag">köyler</span>
+                </div>
+                <h3>Vadiler ve yürüyüş köyleri</h3>
+                <p>Lauterbrunnen, Mürren, Wengen ve Grindelwald merkezli doğa rotası. En iyi dönem genelde haziran-eylül arası.</p>
+                <ul class="day-list">
+                  <li><strong>1. gün:</strong> Interlaken'e yerleşme, göl kıyısında hafif tempo.</li>
+                  <li><strong>2. gün:</strong> Lauterbrunnen, Staubbach ve Trümmelbach şelaleleri.</li>
+                  <li><strong>3. gün:</strong> Mürren, Gimmelwald ve Schilthorn.</li>
+                  <li><strong>4. gün:</strong> Grindelwald First, Bachalpsee yürüyüşü.</li>
+                  <li><strong>5. gün:</strong> Wengen ve Kleine Scheidegg.</li>
+                  <li><strong>6. gün:</strong> Brienz Gölü ve Giessbach Şelalesi.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="route-card" data-kind="classic train city">
+              <img class="route-image" src="https://images.unsplash.com/photo-1521808896374-c407e2ae5377?auto=format&fit=crop&w=900&q=78" alt="Bern eski şehir ve nehir manzarası">
+              <div class="card-body">
+                <div class="tag-row">
+                  <span class="tag">10 gün</span>
+                  <span class="tag">tam İsviçre</span>
+                  <span class="tag">dengeli</span>
+                </div>
+                <h3>Büyük İsviçre halkası</h3>
+                <p>Ülkenin Almanca ve Fransızca konuşulan bölgelerini, Alpler'i ve göl kasabalarını tek planda toplar.</p>
+                <ul class="day-list">
+                  <li><strong>1-2. gün:</strong> Zürih ve Luzern.</li>
+                  <li><strong>3-4. gün:</strong> Interlaken, Lauterbrunnen, Grindelwald.</li>
+                  <li><strong>5-6. gün:</strong> Zermatt ve Gornergrat.</li>
+                  <li><strong>7. gün:</strong> Montreux, Chillon, Lavaux.</li>
+                  <li><strong>8. gün:</strong> Lozan veya Cenevre.</li>
+                  <li><strong>9-10. gün:</strong> Bern ve Basel finali.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="yerler" class="band">
+        <div class="container">
+          <div class="section-head">
+            <h2>Gezilecek yerler</h2>
+            <p>Şehir, dağ, göl ve kültür duraklarını birlikte düşünmek İsviçre planını çok daha güçlü yapar.</p>
+          </div>
+
+          <div class="places-grid">
+            <article class="place-card">
+              <img class="place-image" src="https://images.unsplash.com/photo-1519552928909-67ca7aef9265?auto=format&fit=crop&w=700&q=76" alt="Zürih şehir ve nehir manzarası">
+              <div class="card-body">
+                <h3>Zürih</h3>
+                <p>Eski şehir, Limmat kıyısı, Kunsthaus, Lindenhof ve göl çevresiyle ülkeye düzenli, zarif bir giriş.</p>
+                <div class="place-meta"><span>1-2 gün</span><span>müze</span><span>alışveriş</span></div>
+              </div>
+            </article>
+
+            <article class="place-card">
+              <img class="place-image" src="https://images.unsplash.com/photo-1601980459331-df2e36a2b005?auto=format&fit=crop&w=700&q=76" alt="Luzern gölü ve dağlar">
+              <div class="card-body">
+                <h3>Luzern</h3>
+                <p>Kapellbrücke, göl tekneleri, Pilatus ve Rigi bağlantılarıyla ilk kez gidenler için en güçlü üslerden biri.</p>
+                <div class="place-meta"><span>2 gün</span><span>göl</span><span>dağ</span></div>
+              </div>
+            </article>
+
+            <article class="place-card">
+              <img class="place-image" src="https://images.unsplash.com/photo-1527095655060-4026c4af2b25?auto=format&fit=crop&w=700&q=76" alt="Lauterbrunnen vadisi">
+              <div class="card-body">
+                <h3>Lauterbrunnen</h3>
+                <p>Şelalelerle çevrili vadi, Mürren ve Wengen'e açılan kapı. Fotoğraf ve yürüyüş için çok güçlü.</p>
+                <div class="place-meta"><span>1-3 gün</span><span>doğa</span><span>yürüyüş</span></div>
+              </div>
+            </article>
+
+            <article class="place-card">
+              <img class="place-image" src="https://images.unsplash.com/photo-1550503736-c1a2c9033c03?auto=format&fit=crop&w=700&q=76" alt="Zermatt ve Matterhorn">
+              <div class="card-body">
+                <h3>Zermatt</h3>
+                <p>Araçsız kasaba atmosferi, Matterhorn manzarası, Gornergrat treni ve yüksek irtifa yürüyüşleri.</p>
+                <div class="place-meta"><span>2 gün</span><span>Alpler</span><span>ikonik</span></div>
+              </div>
+            </article>
+
+            <article class="place-card">
+              <img class="place-image" src="https://images.unsplash.com/photo-1565967511849-76a60a516170?auto=format&fit=crop&w=700&q=76" alt="Bern eski şehir">
+              <div class="card-body">
+                <h3>Bern</h3>
+                <p>UNESCO eski şehir dokusu, saat kulesi, arkadlı sokaklar ve Aare Nehri çevresiyle sakin başkent.</p>
+                <div class="place-meta"><span>1 gün</span><span>tarih</span><span>yürüyüş</span></div>
+              </div>
+            </article>
+
+            <article class="place-card">
+              <img class="place-image" src="https://images.unsplash.com/photo-1564603649988-7c0c02ddbcfa?auto=format&fit=crop&w=700&q=76" alt="Montreux ve Cenevre Gölü">
+              <div class="card-body">
+                <h3>Montreux</h3>
+                <p>Cenevre Gölü kıyısı, Chillon Şatosu, caz kültürü ve Lavaux bağlarına yakınlığıyla romantik bir durak.</p>
+                <div class="place-meta"><span>1-2 gün</span><span>göl</span><span>şato</span></div>
+              </div>
+            </article>
+
+            <article class="place-card">
+              <img class="place-image" src="https://images.unsplash.com/photo-1559741033-d85618a39291?auto=format&fit=crop&w=700&q=76" alt="Basel eski şehir">
+              <div class="card-body">
+                <h3>Basel</h3>
+                <p>Sanat müzeleri, Ren kıyısı, çağdaş mimari ve Almanya-Fransa sınırına yakın şehir ritmi.</p>
+                <div class="place-meta"><span>1 gün</span><span>sanat</span><span>mimari</span></div>
+              </div>
+            </article>
+
+            <article class="place-card">
+              <img class="place-image" src="https://images.unsplash.com/photo-1548707309-dcebeab9ea9b?auto=format&fit=crop&w=700&q=76" alt="Lugano gölü ve dağlar">
+              <div class="card-body">
+                <h3>Lugano</h3>
+                <p>İtalyanca konuşulan Ticino bölgesinde palmiye, göl, Monte Brè ve daha Akdenizli bir İsviçre yüzü.</p>
+                <div class="place-meta"><span>2 gün</span><span>Ticino</span><span>göl</span></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="tren">
+        <div class="container split">
+          <div>
+            <div class="section-head" style="display:block;margin-bottom:24px">
+              <h2>Trenle gezme planı</h2>
+              <p style="margin-top:14px">İsviçre'de tren yalnızca ulaşım değil, rotanın en güzel parçası olabilir. Bu örnek hat, ilk kez gidenler için manzarayı ve pratikliği dengeler.</p>
+            </div>
+
+            <div class="timeline">
+              <article class="timeline-item">
+                <time>Sabah</time>
+                <div>
+                  <h3>Şehirler arası erken geçiş</h3>
+                  <p>Uzun trenleri sabaha koy. Öğlene doğru yeni şehirde olursan hem otel bırakma hem de keşif için gün kalır.</p>
+                </div>
+              </article>
+              <article class="timeline-item">
+                <time>Öğlen</time>
+                <div>
+                  <h3>Göl veya eski şehir molası</h3>
+                  <p>İsviçre istasyonları genelde merkeze yakındır. Bern, Luzern, Lozan ve Zürih'te yarım günlük yürüyüş çok verimli olur.</p>
+                </div>
+              </article>
+              <article class="timeline-item">
+                <time>İkindi</time>
+                <div>
+                  <h3>Dağ bağlantılarını hava durumuna göre seç</h3>
+                  <p>Pilatus, Rigi, Gornergrat ve Jungfraujoch gibi yüksek duraklarda bulut durumunu kontrol edip esnek kalmak en iyi sonuç verir.</p>
+                </div>
+              </article>
+              <article class="timeline-item">
+                <time>Akşam</time>
+                <div>
+                  <h3>Aynı üste iki gece kal</h3>
+                  <p>Interlaken, Luzern ve Zermatt gibi merkezlerde iki gece kalmak bavul yorgunluğunu azaltır, çevre gezilerini rahatlatır.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <aside class="map-board">
+            <p class="eyebrow" style="color:var(--red-dark)">Örnek 7 günlük akış</p>
+            <h2 style="margin:0;font-size:32px;line-height:1.08">Zürih'ten Cenevre Gölü'ne manzaralı geçiş</h2>
+            <div class="map-line">
+              <div class="stop"><span class="pin">1</span><div><strong>Zürih</strong><span>Eski şehir, Limmat, göl kıyısı.</span></div></div>
+              <div class="stop"><span class="pin">2</span><div><strong>Luzern</strong><span>Kapellbrücke, Rigi veya Pilatus.</span></div></div>
+              <div class="stop"><span class="pin">3</span><div><strong>Interlaken</strong><span>Lauterbrunnen, Grindelwald, Brienz.</span></div></div>
+              <div class="stop"><span class="pin">4</span><div><strong>Zermatt</strong><span>Matterhorn, Gornergrat, 5-Seenweg.</span></div></div>
+              <div class="stop"><span class="pin">5</span><div><strong>Montreux</strong><span>Chillon, Lavaux, göl kıyısı.</span></div></div>
+              <div class="stop"><span class="pin">6</span><div><strong>Cenevre</strong><span>Jet d'Eau, eski şehir, dönüş.</span></div></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="pratik" class="band">
+        <div class="container">
+          <div class="section-head">
+            <h2>Pratik bilgiler</h2>
+            <p>Bütçe, mevsim, ulaşım kartı ve konaklama kararları gezi deneyimini doğrudan değiştirir.</p>
+          </div>
+
+          <div class="info-grid">
+            <article class="info-card">
+              <h3>Ne zaman gidilir?</h3>
+              <p>Şehir ve göl gezileri için nisan-ekim arası rahat. Yürüyüş için haziran-eylül; kayak ve kış atmosferi için aralık-mart daha uygundur.</p>
+            </article>
+            <article class="info-card">
+              <h3>Ulaşım stratejisi</h3>
+              <p>Şehirler arası tren çok güçlüdür. Çok trenli rotalarda Swiss Travel Pass veya yarı ücret kartı seçeneklerini toplam bilet maliyetine göre karşılaştır.</p>
+            </article>
+            <article class="info-card">
+              <h3>Nerede kalınır?</h3>
+              <p>İlk gezi için Zürih, Luzern, Interlaken ve Zermatt iyi üslerdir. Daha sakin tempo için Thun, Spiez, Vevey ve Weggis değerlendirilebilir.</p>
+            </article>
+            <article class="info-card">
+              <h3>Bütçe notları</h3>
+              <p>İsviçre pahalı bir destinasyondur. Market öğünleri, erken otel rezervasyonu ve şehir kartları toplam maliyeti ciddi azaltabilir.</p>
+              <table class="cost-table" aria-label="Yaklaşık bütçe kalemleri">
+                <tr><th>Ekonomik</th><td>Hostel/market/yürüyüş odaklı</td></tr>
+                <tr><th>Orta</th><td>3 yıldız otel, tren, seçilmiş dağ çıkışları</td></tr>
+                <tr><th>Konforlu</th><td>Merkezi otel, panoramik tren, restoranlar</td></tr>
+              </table>
+            </article>
+            <article class="info-card">
+              <h3>Yanına ne almalı?</h3>
+              <p>Katmanlı giyim, yağmurluk, yürüyüş ayakkabısı, güneş gözlüğü ve taşınabilir şarj cihazı özellikle dağ günlerinde hayat kolaylaştırır.</p>
+            </article>
+            <article class="info-card">
+              <h3>Planlama ipucu</h3>
+              <p>Dağ zirvelerini sabit güne kilitleme. Hava açıksa zirveye çık, kapalıysa şehir, müze, göl teknesi veya vadi yürüyüşüyle günü değiştir.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta">
+        <div class="container">
+          <div>
+            <h2>Kendi İsviçre programını bu iskeletten kur.</h2>
+            <p>Rota kartlarından birini seç, kalış sürene göre gün çıkar veya ekle, dağ çıkışlarını hava durumuna göre esnek bırak. En iyi İsviçre gezileri dakik trenler kadar esnek günlerle de güzelleşir.</p>
+          </div>
+          <a class="button primary" href="#rotalar">Rotalara dön</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <span>İsviçre Rehberi - bağımsız gezi planlama sitesi</span>
+        <span class="source-links">
+          <a href="https://www.myswitzerland.com/en-us/premium-panorama-trains.html" target="_blank" rel="noreferrer">Panoramik trenler</a>
+          <a href="https://www.myswitzerland.com/en-us/experiences/experience-tour/highlights-by-train-bus-and-boat/grand-train-tour-of-switzerland/tickets-reservations-timetables/" target="_blank" rel="noreferrer">Bilet ve rezervasyon</a>
+          <span>Görseller Unsplash kaynaklıdır.</span>
+        </span>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const routeCards = document.querySelectorAll(".route-card");
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const filter = button.dataset.filter;
+
+        filterButtons.forEach((item) => item.classList.remove("active"));
+        button.classList.add("active");
+
+        routeCards.forEach((card) => {
+          const kinds = card.dataset.kind.split(" ");
+          card.hidden = filter !== "all" && !kinds.includes(filter);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
